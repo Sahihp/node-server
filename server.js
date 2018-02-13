@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.port || 3000;
+
 
 var app = express();
 
@@ -76,7 +78,7 @@ app.get('/bad' , ( req , res ) =>{
     });
 });
 
-app.listen(3000 , () => {
-    console.log('listening to server at localhost:3000');
+app.listen(port , () => {
+    console.log(`listening to server at localhost: ${port}`);
 });
 
