@@ -4,7 +4,6 @@ const fs = require('fs');
 
 const port = process.env.PORT || 3000;
 
-
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -77,6 +76,12 @@ app.get('/bad' , ( req , res ) =>{
         error:'There was some error.'
     });
 });
+
+app.get('/projects' ,( req , res ) => {
+    res.render('projects.hbs',{
+        pageTitle:'Projects'
+    });
+})
 
 app.listen(port , () => {
     console.log(`listening to server at localhost: ${port}`);
